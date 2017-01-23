@@ -16,7 +16,8 @@ static const unordered_map<string, uint8_t> charnamemap = {
 	{ "tikal", Characters_Tikal },
 	{ "amy", Characters_Amy },
 	{ "gamma", Characters_Gamma },
-	{ "big", Characters_Big }
+	{ "big", Characters_Big },
+	{ "supersonic", 8 }
 };
 
 static string trim(const string &s)
@@ -46,8 +47,12 @@ extern "C"
 {
 	__declspec(dllexport) void __cdecl Init(const char *path, const HelperFunctions &helperFunctions)
 	{
-		PhysicsData *tmp = new PhysicsData[PhysicsArray_Length];
+		PhysicsData *tmp = new PhysicsData[PhysicsArray_Length + 1];
 		memcpy(tmp, PhysicsArray, PhysicsArray_Length * sizeof(PhysicsData));
+		tmp[PhysicsArray_Length] = tmp[Characters_Sonic];
+		tmp[PhysicsArray_Length].RollDecel = -0.001;
+		tmp[PhysicsArray_Length].AirDecel = -0.002;
+		tmp[PhysicsArray_Length].AirAccel = 0.05;
 		const IniFile *settings = new IniFile(std::string(path) + "\\mod.ini");
 		for (uint8_t i = 0; i < LengthOfArray(charnames); i++)
 		{
