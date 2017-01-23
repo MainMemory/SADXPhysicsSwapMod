@@ -50,9 +50,9 @@ extern "C"
 		PhysicsData *tmp = new PhysicsData[PhysicsArray_Length + 1];
 		memcpy(tmp, PhysicsArray, PhysicsArray_Length * sizeof(PhysicsData));
 		tmp[PhysicsArray_Length] = tmp[Characters_Sonic];
-		tmp[PhysicsArray_Length].RollDecel = -0.001;
-		tmp[PhysicsArray_Length].AirDecel = -0.002;
-		tmp[PhysicsArray_Length].AirAccel = 0.05;
+		tmp[PhysicsArray_Length].RollDecel = -0.001f;
+		tmp[PhysicsArray_Length].AirDecel = -0.002f;
+		tmp[PhysicsArray_Length].AirAccel = 0.05f;
 		const IniFile *settings = new IniFile(std::string(path) + "\\mod.ini");
 		for (uint8_t i = 0; i < LengthOfArray(charnames); i++)
 		{
