@@ -37,7 +37,21 @@ static const string charnames[] = {
 	"sa2bchaowalker",
 	"sa2bdarkchaowalker",
 	"sa2btikal",
-	"sa2bchaos"
+	"sa2bchaos",
+	"sa2bunused2",
+	"sa2bunused3",
+	"heroessonic",
+	"heroesknuckles",
+	"heroestails",
+	"heroesshadow",
+	"heroesomega",
+	"heroesrouge",
+	"heroesamy",
+	"heroesbig",
+	"heroescream",
+	"heroesespio",
+	"heroesvector",
+	"heroescharmy"
 };
 
 static unordered_map<string, uint8_t> charnamemap;
