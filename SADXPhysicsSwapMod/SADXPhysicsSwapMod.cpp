@@ -90,7 +90,7 @@ extern "C"
 		const IniFile *settings = new IniFile(std::string(path) + "\\config.ini");
 		for (uint8_t i = 0; i < LengthOfArray(keynames); i++)
 		{
-			uint8_t c = ParseCharacterID(settings->getString("", keynames[i] + "Physics"), (Characters)i);
+			uint8_t c = ParseCharacterID(settings->getString("", keynames[i]), (Characters)i);
 			if (i == c) continue;
 			memcpy(&PhysicsArray[i], &tmp[c], offsetof(PhysicsData, RippleSize));
 			PhysicsArray[i].Gravity = tmp[c].Gravity;
